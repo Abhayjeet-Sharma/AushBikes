@@ -1,0 +1,1463 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AUSH BIKES | Precision Cycle Components</title>
+    <meta
+      name="description"
+      content="Precision-engineered bicycle components, manufactured to spec and built to last."
+    />
+
+    <!--
+  ============================================================
+  HOW TO CUSTOMIZE THIS TEMPLATE
+  ============================================================
+  1) LOGO: search for "LOGO PLACEHOLDER" (header + footer).
+     Replace the placeholder <div> with:
+       <img src="images/logo.png" alt="Aush Bikes">
+
+  2) PRODUCT IMAGES: each .product-media now holds a real <img>.
+     To add more, copy a whole .product-card block, change the
+     data-category, image src, part number, name and tag.
+     Clicking any product photo opens it enlarged (lightbox) —
+     this works automatically, no per-image setup needed.
+
+  3) CONTACT DETAILS: search "CONTACT INFO" and fill in real
+     address, phone, email, and map. The phone and email tiles
+     are real tel: / mailto: links — just update the numbers.
+  ============================================================
+-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --ink: #14161a;
+        --panel: #23262b;
+        --panel-2: #2e3238;
+        --paper: #f5f3ed;
+        --paper-dim: #e9e6dc;
+        --line: #d6d2c4;
+        --line-dark: #3c4046;
+        --steel: #6b7178;
+        --accent: #ff4b1f;
+        --accent-dim: #c9400f;
+        --good: #3d8b5f;
+        --bad: #c0392b;
+
+        --display: "Oswald", sans-serif;
+        --body: "Work Sans", sans-serif;
+        --mono: "IBM Plex Mono", monospace;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--body);
+        background: var(--paper);
+        color: var(--ink);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      .eyebrow {
+        font-family: var(--mono);
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 22px;
+        height: 1px;
+        background: var(--accent);
+        display: inline-block;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: var(--display);
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
+        font-weight: 600;
+        line-height: 1.08;
+      }
+
+      .bracketed {
+        position: relative;
+      }
+      .bracketed::before,
+      .bracketed::after {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border: 2px solid var(--accent);
+        opacity: 0.85;
+      }
+      .bracketed::before {
+        top: -1px;
+        left: -1px;
+        border-right: none;
+        border-bottom: none;
+      }
+      .bracketed::after {
+        bottom: -1px;
+        right: -1px;
+        border-left: none;
+        border-top: none;
+      }
+
+      /* ---------- header ---------- */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--ink);
+        border-bottom: 1px solid var(--line-dark);
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 84px;
+      }
+      .logo-slot {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .logo-placeholder {
+        width: 52px;
+        height: 52px;
+        border: 1.5px dashed var(--steel);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--mono);
+        font-size: 9px;
+        color: var(--steel);
+        text-align: center;
+        letter-spacing: 0.05em;
+        flex-shrink: 0;
+      }
+      .logo-text {
+        font-family: var(--display);
+        font-size: 19px;
+        letter-spacing: 0.04em;
+        color: var(--paper);
+        text-transform: uppercase;
+      }
+      .logo-text span {
+        color: var(--accent);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 38px;
+      }
+      nav a {
+        font-family: var(--mono);
+        font-size: 12.5px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--paper);
+        opacity: 0.75;
+        transition:
+          opacity 0.2s ease,
+          color 0.2s ease;
+        padding: 4px 0;
+        border-bottom: 1px solid transparent;
+      }
+      nav a:hover {
+        opacity: 1;
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+      }
+
+      .nav-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+      }
+      .nav-toggle span {
+        width: 24px;
+        height: 2px;
+        background: var(--paper);
+      }
+
+      /* ---------- hero ---------- */
+      .hero {
+        background: var(--ink);
+        color: var(--paper);
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid var(--line-dark);
+      }
+      .hero-grid-bg {
+        position: absolute;
+        inset: 0;
+        opacity: 0.5;
+        background-image:
+          linear-gradient(var(--line-dark) 1px, transparent 1px),
+          linear-gradient(90deg, var(--line-dark) 1px, transparent 1px);
+        background-size: 64px 64px;
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.9),
+          transparent 85%
+        );
+        mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.9),
+          transparent 85%
+        );
+      }
+      .hero-inner {
+        position: relative;
+        padding: 128px 0 108px;
+      }
+      .hero-inner .eyebrow {
+        margin-bottom: 26px;
+      }
+      .hero h1 {
+        font-size: clamp(40px, 6vw, 78px);
+        max-width: 15ch;
+        margin-bottom: 26px;
+      }
+      .hero h1 em {
+        font-style: normal;
+        color: var(--accent);
+      }
+      .hero p.lead {
+        font-family: var(--body);
+        font-size: 18px;
+        color: #c7c9cc;
+        max-width: 46ch;
+        margin-bottom: 44px;
+      }
+      .hero-ctas {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        margin-bottom: 76px;
+      }
+
+      .btn {
+        font-family: var(--mono);
+        font-size: 13px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 15px 30px;
+        display: inline-block;
+        transition: all 0.2s ease;
+        border: 1px solid transparent;
+        cursor: pointer;
+      }
+      .btn-solid {
+        background: var(--accent);
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .btn-solid:hover {
+        background: #ff6339;
+      }
+      .btn-solid:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .btn-outline {
+        border-color: var(--steel);
+        color: var(--paper);
+      }
+      .btn-outline:hover {
+        border-color: var(--paper);
+      }
+
+      .hero-specs {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-top: 1px solid var(--line-dark);
+        padding-top: 36px;
+      }
+      .hero-specs div {
+        border-left: 1px solid var(--line-dark);
+        padding-left: 20px;
+      }
+      .hero-specs div:first-child {
+        border-left: none;
+        padding-left: 0;
+      }
+      .hero-specs .num {
+        font-family: var(--display);
+        font-size: 34px;
+        color: var(--paper);
+      }
+      .hero-specs .num span {
+        color: var(--accent);
+      }
+      .hero-specs .label {
+        font-family: var(--mono);
+        font-size: 11.5px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--steel);
+        margin-top: 6px;
+      }
+
+      /* ---------- section shell ---------- */
+      section {
+        padding: 108px 0;
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 40px;
+        margin-bottom: 64px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 28px;
+      }
+      .section-head h2 {
+        font-size: clamp(30px, 4vw, 44px);
+      }
+      .section-head .section-note {
+        font-family: var(--body);
+        font-size: 15px;
+        color: var(--steel);
+        max-width: 34ch;
+        text-align: right;
+      }
+
+      /* ---------- about ---------- */
+      .about {
+        background: var(--paper);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 72px;
+        align-items: start;
+      }
+      .about-copy p {
+        font-size: 16.5px;
+        color: #33363b;
+        margin-bottom: 20px;
+        max-width: 56ch;
+      }
+      .about-copy p:last-child {
+        margin-bottom: 0;
+      }
+
+      .spec-sheet {
+        border: 1px solid var(--line);
+        background: #fff;
+      }
+      .spec-sheet-head {
+        font-family: var(--mono);
+        font-size: 11.5px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--steel);
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+      }
+      .spec-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 20px 24px;
+        border-bottom: 1px solid var(--line);
+      }
+      .spec-row:last-child {
+        border-bottom: none;
+      }
+      .spec-row .k {
+        font-family: var(--body);
+        font-size: 14.5px;
+        color: #55585e;
+      }
+      .spec-row .v {
+        font-family: var(--display);
+        font-size: 26px;
+        color: var(--ink);
+      }
+      .spec-row .v span {
+        color: var(--accent);
+        font-family: var(--body);
+        font-size: 14px;
+        margin-left: 4px;
+      }
+
+      /* ---------- products ---------- */
+      .products {
+        background: var(--paper-dim);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .filter-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 48px;
+      }
+      .filter-tab {
+        font-family: var(--mono);
+        font-size: 12px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 10px 18px;
+        border: 1px solid var(--line);
+        background: transparent;
+        color: #55585e;
+        cursor: pointer;
+        transition: all 0.15s ease;
+      }
+      .filter-tab:hover {
+        border-color: var(--accent);
+        color: var(--ink);
+      }
+      .filter-tab.active {
+        background: var(--ink);
+        border-color: var(--ink);
+        color: var(--paper);
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+      .product-card {
+        background: var(--paper-dim);
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        transition: background 0.2s ease;
+      }
+      .product-card:hover {
+        background: #fff;
+      }
+      .product-card.is-hidden {
+        display: none;
+      }
+
+      .product-media {
+        position: relative;
+        aspect-ratio: 1 / 1;
+        background: repeating-linear-gradient(
+          135deg,
+          #dedacb,
+          #dedacb 10px,
+          #e5e2d5 10px,
+          #e5e2d5 20px
+        );
+        border: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 18px;
+        overflow: hidden;
+      }
+      .product-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: zoom-in;
+        transition: transform 0.3s ease;
+      }
+      .product-media img:hover {
+        transform: scale(1.04);
+      }
+      .product-media .ph-label {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #7a7d76;
+        background: rgba(245, 243, 237, 0.9);
+        padding: 6px 12px;
+        border: 1px solid var(--steel);
+      }
+
+      .product-partno {
+        font-family: var(--mono);
+        font-size: 11.5px;
+        color: var(--accent);
+        letter-spacing: 0.04em;
+        margin-bottom: 8px;
+      }
+      .product-name {
+        font-family: var(--display);
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        letter-spacing: 0.01em;
+      }
+      .product-tag {
+        font-family: var(--body);
+        font-size: 13px;
+        color: #6e716b;
+      }
+
+      /* ---------- lightbox ---------- */
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 11, 13, 0.94);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        padding: 40px;
+      }
+      .lightbox.is-open {
+        display: flex;
+      }
+      .lightbox img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        border: 1px solid var(--line-dark);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      }
+      .lightbox-close {
+        position: absolute;
+        top: 28px;
+        right: 32px;
+        width: 44px;
+        height: 44px;
+        border: 1px solid var(--steel);
+        background: transparent;
+        color: var(--paper);
+        font-family: var(--mono);
+        font-size: 20px;
+        line-height: 1;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          border-color 0.2s ease,
+          color 0.2s ease;
+      }
+      .lightbox-close:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .lightbox-caption {
+        position: absolute;
+        bottom: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: var(--mono);
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--steel);
+      }
+
+      /* ---------- process strip ---------- */
+      .process {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .process .section-head {
+        border-bottom-color: var(--line-dark);
+      }
+      .process .section-head h2 {
+        color: var(--paper);
+      }
+      .process .section-note {
+        color: var(--steel);
+      }
+
+      .process-steps {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--line-dark);
+        border: 1px solid var(--line-dark);
+      }
+      .process-step {
+        background: var(--ink);
+        padding: 32px 26px;
+      }
+      .process-step .step-index {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--accent);
+        margin-bottom: 18px;
+      }
+      .process-step h3 {
+        font-size: 17px;
+        margin-bottom: 12px;
+      }
+      .process-step p {
+        font-family: var(--body);
+        font-size: 14px;
+        color: #a6a9ad;
+      }
+
+      /* ---------- contact ---------- */
+      .contact {
+        background: var(--paper);
+      }
+
+      .contact-panel {
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .contact-channels {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        border-bottom: 1px solid var(--line-dark);
+      }
+      .channel {
+        padding: 40px 36px;
+        border-left: 1px solid var(--line-dark);
+        transition: background 0.2s ease;
+      }
+      .channel:first-child {
+        border-left: none;
+      }
+      .channel.is-link {
+        display: block;
+      }
+      .channel.is-link:hover {
+        background: var(--panel);
+      }
+      .channel .k {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--steel);
+        margin-bottom: 14px;
+      }
+      .channel .v {
+        font-family: var(--display);
+        font-size: 21px;
+        letter-spacing: 0.01em;
+        color: var(--paper);
+        line-height: 1.3;
+      }
+      .channel.is-link .v {
+        color: var(--accent);
+      }
+      .channel .v-sub {
+        font-family: var(--body);
+        font-size: 14px;
+        color: #a6a9ad;
+        margin-top: 6px;
+      }
+
+      .map-slot {
+        aspect-ratio: 21/6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--steel);
+        text-align: center;
+        padding: 20px;
+        background: repeating-linear-gradient(
+          135deg,
+          var(--panel),
+          var(--panel) 10px,
+          var(--panel-2) 10px,
+          var(--panel-2) 20px
+        );
+      }
+
+      /* ---------- footer ---------- */
+      footer {
+        background: var(--ink);
+        border-top: 1px solid var(--line-dark);
+        padding: 40px 0;
+      }
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .footer-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .logo-placeholder-sm {
+        width: 30px;
+        height: 30px;
+        border: 1.5px dashed var(--steel);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--mono);
+        font-size: 7px;
+        color: var(--steel);
+        text-align: center;
+        flex-shrink: 0;
+      }
+      footer .fine {
+        font-family: var(--mono);
+        font-size: 11.5px;
+        color: var(--steel);
+        letter-spacing: 0.03em;
+      }
+      .footer-links {
+        display: flex;
+        gap: 26px;
+      }
+      .footer-links a {
+        font-family: var(--mono);
+        font-size: 11.5px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--steel);
+        transition: color 0.2s ease;
+      }
+      .footer-links a:hover {
+        color: var(--accent);
+      }
+
+      /* ---------- responsive ---------- */
+      @media (max-width: 980px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+        .product-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .process-steps {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .contact-channels {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .channel:nth-child(3) {
+          border-left: none;
+        }
+        .hero-specs {
+          grid-template-columns: repeat(2, 1fr);
+          row-gap: 28px;
+        }
+        .hero-specs div:nth-child(3) {
+          border-left: none;
+          padding-left: 0;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .wrap {
+          padding: 0 20px;
+        }
+        nav {
+          position: absolute;
+          top: 84px;
+          left: 0;
+          right: 0;
+          background: var(--ink);
+          border-bottom: 1px solid var(--line-dark);
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.25s ease;
+        }
+        nav.open {
+          max-height: 400px;
+        }
+        nav ul {
+          flex-direction: column;
+          gap: 0;
+          padding: 8px 32px 24px;
+        }
+        nav ul li {
+          border-bottom: 1px solid var(--line-dark);
+        }
+        nav ul li a {
+          display: block;
+          padding: 16px 0;
+        }
+        .nav-toggle {
+          display: flex;
+        }
+        .section-head {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 14px;
+        }
+        .section-head .section-note {
+          text-align: left;
+        }
+        .product-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .process-steps {
+          grid-template-columns: 1fr;
+        }
+        .contact-channels {
+          grid-template-columns: 1fr;
+        }
+        .channel {
+          border-left: none;
+          border-top: 1px solid var(--line-dark);
+          padding: 28px 24px;
+        }
+        .channel:first-child {
+          border-top: none;
+        }
+        section {
+          padding: 72px 0;
+        }
+        .hero-inner {
+          padding: 84px 0 64px;
+        }
+        .lightbox {
+          padding: 16px;
+        }
+        .lightbox-close {
+          top: 16px;
+          right: 16px;
+          width: 38px;
+          height: 38px;
+        }
+      }
+      .channel .fa-instagram {
+    margin-right: 8px;
+    color: #E4405F;
+    font-size: 20px;
+}
+      @media (max-width: 480px) {
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          transition: none !important;
+        }
+      }
+
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible,
+      select:focus-visible,
+      img:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap header-inner">
+        <div class="logo-slot">
+          <!-- LOGO PLACEHOLDER: replace this div with <img src="images/logo.png" alt="Aush Bikes" style="height:44px;width:auto;"> -->
+          <div class="logo-placeholder">YOUR<br />LOGO</div>
+          <span class="logo-text">AUSH <span>BIKES</span></span>
+        </div>
+        <button
+          class="nav-toggle"
+          aria-label="Toggle menu"
+          onclick="document.getElementById('siteNav').classList.toggle('open')"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="siteNav">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <p class="eyebrow">Cycle Component Manufacturing</p>
+        <h1>
+          Precision parts, <em>engineered</em> to carry every ride further.
+        </h1>
+        <p class="lead">
+          From raw stock to finished component — we design, machine and finish
+          bicycle parts that riders and workshops trust to perform under real
+          load, ride after ride.
+        </p>
+        <div class="hero-ctas">
+          <a href="#products" class="btn btn-solid">View Our Products</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+        <div class="hero-specs">
+          <div>
+            <div class="num"><span>4</span>+</div>
+            <div class="label">Years Manufacturing</div>
+          </div>
+          <div>
+            <div class="num"><span>1M</span>+</div>
+            <div class="label">Components Shipped</div>
+          </div>
+          <div>
+            <div class="num"><span>40</span>+</div>
+            <div class="label">Product Lines</div>
+          </div>
+          <div>
+            <div class="num"><span>ISO</span> 9001</div>
+            <div class="label">Certified Quality</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">About Us</p>
+            <h2>Built on the floor,<br />not just on paper.</h2>
+          </div>
+          <p class="section-note">
+            A short overview of who you are, what you make, and why workshops
+            and riders choose you.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              AUSH Bikes has been manufacturing bicycle components for over 4
+              years, supplying workshops, distributors and OEM partners with
+              parts built to exact tolerance. Every component that leaves our
+              facility is machined, tested and inspected in-house before it
+              ships.
+            </p>
+            <p>
+              We work across the full range of drivetrain and running-gear parts
+              — chains, hubs, cranksets, brake systems and more — using material
+              sourced and tested to consistent, documented standards. It's the
+              kind of consistency that shops can build a reputation on.
+            </p>
+            <p>
+              Replace this text with your own company history, manufacturing
+              capabilities, certifications and what sets your parts apart.
+            </p>
+            <a
+              href="#contact"
+              class="btn btn-outline"
+              style="
+                margin-top: 8px;
+                color: var(--ink);
+                border-color: var(--ink);
+              "
+              >Talk to Our Team</a
+            >
+          </div>
+
+          <div class="spec-sheet bracketed">
+            <div class="spec-sheet-head">
+              <span>Company Spec</span>
+              <span>Rev. 01</span>
+            </div>
+            <div class="spec-row">
+              <span class="k">Founded</span><span class="v">2022</span>
+            </div>
+            <div class="spec-row">
+              <span class="k">Facility Size</span
+              ><span class="v">45,000<span>sq ft</span></span>
+            </div>
+            <div class="spec-row">
+              <span class="k">Quality Standard</span
+              ><span class="v">ISO<span>9001:2015</span></span>
+            </div>
+            <div class="spec-row">
+              <span class="k">Annual Output</span
+              ><span class="v">50,000<span>units</span></span>
+            </div>
+            <div class="spec-row">
+              <span class="k">Markets Served</span
+              ><span class="v">12<span>countries</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="products">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Product Catalogue</p>
+            <h2>Every part, machined to spec.</h2>
+          </div>
+          <p class="section-note">
+            Filter by category. Click any photo to view it enlarged.
+          </p>
+        </div>
+
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-tab active" data-filter="all">All</button>
+          <button class="filter-tab" data-filter="chains">Chains</button>
+          <button class="filter-tab" data-filter="hubs">
+            Hubs &amp; Bearings
+          </button>
+          <button class="filter-tab" data-filter="brakes">Brake Systems</button>
+          <button class="filter-tab" data-filter="cranks">Cranksets</button>
+          <button class="filter-tab" data-filter="pedals">Pedals</button>
+          <button class="filter-tab" data-filter="forks">Forks</button>
+          <button class="filter-tab" data-filter="other">Other</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+          <div class="product-card" data-category="chains">
+            <div class="product-media">
+              <img src="Aush_page-0001.jpg" alt="Drive Chain" />
+            </div>
+            <div class="product-partno">P/N&nbsp;001</div>
+            <div class="product-name">Drive Chain</div>
+            <div class="product-tag">Chains</div>
+          </div>
+
+          <div class="product-card" data-category="hubs">
+            <div class="product-media">
+              <img src="Aush_page-0002.jpg" alt="Front Hub" />
+            </div>
+            <div class="product-partno">P/N&nbsp;002</div>
+            <div class="product-name">Front Hub</div>
+            <div class="product-tag">Hubs &amp; Bearings</div>
+          </div>
+
+          <div class="product-card" data-category="hubs">
+            <div class="product-media">
+              <img src="Aush_page-0003.jpg" alt="Rear Hub" />
+            </div>
+            <div class="product-partno">P/N&nbsp;003</div>
+            <div class="product-name">Rear Hub</div>
+            <div class="product-tag">Hubs &amp; Bearings</div>
+          </div>
+
+          <div class="product-card" data-category="brakes">
+            <div class="product-media">
+              <img src="Aush_page-0004.jpg" alt="Disc Brake Caliper" />
+            </div>
+            <div class="product-partno">P/N&nbsp;004</div>
+            <div class="product-name">Disc Brake Caliper</div>
+            <div class="product-tag">Brake Systems</div>
+          </div>
+
+          <div class="product-card" data-category="brakes">
+            <div class="product-media">
+              <img src="Aush_page-0005.jpg" alt="Brake Lever Set" />
+            </div>
+            <div class="product-partno">P/N&nbsp;005</div>
+            <div class="product-name">Brake Lever Set</div>
+            <div class="product-tag">Brake Systems</div>
+          </div>
+
+          <div class="product-card" data-category="cranks">
+            <div class="product-media">
+              <img src="Aush_page-0006.jpg" alt="Crankset" />
+            </div>
+            <div class="product-partno">P/N&nbsp;006</div>
+            <div class="product-name">Crankset</div>
+            <div class="product-tag">Cranksets</div>
+          </div>
+
+          <div class="product-card" data-category="pedals">
+            <div class="product-media">
+              <img src="Aush_page-0007.jpg" alt="Platform Pedals" />
+            </div>
+            <div class="product-partno">P/N&nbsp;007</div>
+            <div class="product-name">Platform Pedals</div>
+            <div class="product-tag">Pedals</div>
+          </div>
+
+          <div class="product-card" data-category="other">
+            <div class="product-media">
+              <img src="Aush_page-0008.jpg" alt="Seat Post" />
+            </div>
+            <div class="product-partno">P/N&nbsp;008</div>
+            <div class="product-name">Seat Post</div>
+            <div class="product-tag">Other</div>
+          </div>
+
+          <!-- TODO: rename these four — filenames didn't tell us what they are -->
+          <div class="product-card" data-category="other">
+            <div class="product-media">
+              <img src="Aush_page-0009.jpg" alt="Component 009" />
+            </div>
+            <div class="product-partno">P/N&nbsp;009</div>
+            <div class="product-name">Component 009</div>
+            <div class="product-tag">Other</div>
+          </div>
+          <div class="product-card" data-category="other">
+            <div class="product-media">
+              <img src="Aush_page-0010.jpg" alt="Component 010" />
+            </div>
+            <div class="product-partno">P/N&nbsp;010</div>
+            <div class="product-name">Component 010</div>
+            <div class="product-tag">Other</div>
+          </div>
+          <div class="product-card" data-category="other">
+            <div class="product-media">
+              <img src="Aush_page-0011.jpg" alt="Component 011" />
+            </div>
+            <div class="product-partno">P/N&nbsp;011</div>
+            <div class="product-name">Component 011</div>
+            <div class="product-tag">Other</div>
+          </div>
+          <div class="product-card" data-category="other">
+            <div class="product-media">
+              <img src="Aush_page-0012.jpg" alt="Component 012" />
+            </div>
+            <div class="product-partno">P/N&nbsp;012</div>
+            <div class="product-name">Component 012</div>
+            <div class="product-tag">Other</div>
+          </div>
+
+          <div class="product-card" data-category="forks">
+            <div class="product-media">
+              <img src="FORK_page-0001.jpg" alt="Fork 1" />
+            </div>
+            <div class="product-partno">P/N&nbsp;013</div>
+            <div class="product-name">Fork</div>
+            <div class="product-tag">Forks</div>
+          </div>
+          <div class="product-card" data-category="forks">
+            <div class="product-media">
+              <img src="FORK_page-0002.jpg" alt="Fork 2" />
+            </div>
+            <div class="product-partno">P/N&nbsp;014</div>
+            <div class="product-name">Fork</div>
+            <div class="product-tag">Forks</div>
+          </div>
+          <div class="product-card" data-category="forks">
+            <div class="product-media">
+              <img src="FORK_page-0003.jpg" alt="Fork 3" />
+            </div>
+            <div class="product-partno">P/N&nbsp;015</div>
+            <div class="product-name">Fork</div>
+            <div class="product-tag">Forks</div>
+          </div>
+          <div class="product-card" data-category="forks">
+            <div class="product-media">
+              <img src="FORK_page-0004.jpg" alt="Fork 4" />
+            </div>
+            <div class="product-partno">P/N&nbsp;016</div>
+            <div class="product-name">Fork</div>
+            <div class="product-tag">Forks</div>
+          </div>
+          <div class="product-card" data-category="forks">
+            <div class="product-media">
+              <img src="FORK_page-0005.jpg" alt="Fork 5" />
+            </div>
+            <div class="product-partno">P/N&nbsp;017</div>
+            <div class="product-name">Fork</div>
+            <div class="product-tag">Forks</div>
+          </div>
+          <div class="product-card" data-category="forks">
+            <div class="product-media">
+              <img src="FORK_page-0006.jpg" alt="Fork 6" />
+            </div>
+            <div class="product-partno">P/N&nbsp;018</div>
+            <div class="product-name">Fork</div>
+            <div class="product-tag">Forks</div>
+          </div>
+          <div class="product-card" data-category="forks">
+            <div class="product-media">
+              <img src="FORK_page-0007.jpg" alt="Fork 7" />
+            </div>
+            <div class="product-partno">P/N&nbsp;019</div>
+            <div class="product-name">Fork</div>
+            <div class="product-tag">Forks</div>
+          </div>
+
+          <!--
+        TO ADD MORE PRODUCTS: copy one of the .product-card blocks
+        above, change the data-category, image src, P/N number,
+        product name and tag. Clicking works automatically.
+      -->
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX: shared overlay used by every product image -->
+    <div
+      class="lightbox"
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Enlarged product image"
+    >
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+        &times;
+      </button>
+      <img id="lightboxImg" src="" alt="" />
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <section id="process" class="process">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">How We Work</p>
+            <h2>From raw material to finished part.</h2>
+          </div>
+          <p class="section-note">
+            A short, honest look at your manufacturing process — edit to match
+            your real workflow.
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-index">01 / Sourcing</div>
+            <h3>Material Selection</h3>
+            <p>
+              Raw stock is sourced and tested against our material specification
+              before it enters production.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-index">02 / Machining</div>
+            <h3>Precision Machining</h3>
+            <p>
+              CNC and forging processes shape each component to tolerance,
+              checked at every stage.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-index">03 / Finishing</div>
+            <h3>Surface Treatment</h3>
+            <p>
+              Plating, anodising or coating is applied for corrosion resistance
+              and finish quality.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-index">04 / Inspection</div>
+            <h3>Quality Control</h3>
+            <p>
+              Every batch is inspected against spec before packing and dispatch
+              to our partners.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Get In Touch</p>
+            <h2>Let's talk about your order.</h2>
+          </div>
+          <p class="section-note">
+            Wholesale, distribution or custom-spec enquiries — call or email us
+            directly.
+          </p>
+        </div>
+
+        <div class="contact-panel bracketed">
+          <!-- CONTACT INFO: replace with real details. The phone/email tiles are
+           real tel: / mailto: links — tapping Phone dials, tapping Email
+           opens the visitor's mail app. -->
+          <div class="contact-channels">
+            <a class="channel is-link" href="tel:+910000000000">
+              <div class="k">Phone</div>
+              <div class="v">+91 89685 88449</div>
+              <div class="v-sub">Mon – Sat, 9 AM – 6 PM</div>
+            </a>
+            <a class="channel is-link" href="mailto:sales@aushbikes.com">
+              <div class="k">Email</div>
+              <div class="v">aushbikes@gmail.com</div>
+              <div class="v-sub">We reply within one business day</div>
+            </a>
+            <div class="channel">
+              <div class="k">Address</div>
+              <div class="v">Plot 000, Industrial Area</div>
+              <div class="v-sub">City, State — PIN CODE</div>
+            </div>
+            <div class="channel">
+              <div class="k">Enquiries</div>
+              <div class="v">Wholesale &amp; OEM</div>
+              <div class="v-sub">
+                Distribution and custom-spec orders welcome
+              </div>
+            </div>
+          </div>
+
+          <a
+            class="channel is-link"
+            href="https://www.instagram.com/aushbikes/"
+            target="_blank"
+          >
+            <div class="k">Instagram</div>
+            <div class="v">
+              <i class="fa-brands fa-instagram"></i> @aushbikes
+            </div>
+            <div class="v-sub">Follow us for product updates</div>
+          </a>
+          <div class="map-slot">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5816.109083192265!2d75.88490650286631!3d30.871343951898343!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a82b8dd94330b%3A0x49adf88888247a48!2sMouji%20Colony%2C%20Daba%2C%20Ludhiana%2C%20Punjab%20141014!5e0!3m2!1sen!2sin!4v1783065721992!5m2!1sen!2sin"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap footer-inner">
+        <div class="footer-left">
+          <div class="logo-placeholder-sm">LOGO</div>
+          <span class="fine"
+            >&copy; <span id="year"></span> AUSH BIKES. All rights
+            reserved.</span
+          >
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#products">Products</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      /* ---------- product category filter ---------- */
+      const tabs = document.querySelectorAll(".filter-tab");
+      const cards = document.querySelectorAll(".product-card");
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+          const filter = tab.dataset.filter;
+          cards.forEach((card) => {
+            const show = filter === "all" || card.dataset.category === filter;
+            card.classList.toggle("is-hidden", !show);
+          });
+        });
+      });
+
+      /* ---------- mobile nav ---------- */
+      document.querySelectorAll("#siteNav a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.getElementById("siteNav").classList.remove("open");
+        });
+      });
+
+      /* ---------- lightbox ---------- */
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const lightboxCaption = document.getElementById("lightboxCaption");
+      const lightboxClose = document.getElementById("lightboxClose");
+
+      function openLightbox(img) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        const card = img.closest(".product-card");
+        const name = card
+          ? card.querySelector(".product-name").textContent
+          : "";
+        const partno = card
+          ? card.querySelector(".product-partno").textContent
+          : "";
+        lightboxCaption.textContent = [partno, name]
+          .filter(Boolean)
+          .join(" — ");
+        lightbox.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+        lightboxClose.focus();
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("is-open");
+        document.body.style.overflow = "";
+        lightboxImg.src = "";
+      }
+
+      document.querySelectorAll(".product-media img").forEach((img) => {
+        img.addEventListener("click", () => openLightbox(img));
+      });
+
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && lightbox.classList.contains("is-open"))
+          closeLightbox();
+      });
+    </script>
+  </body>
+</html>
