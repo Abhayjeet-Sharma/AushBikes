@@ -165,7 +165,6 @@
       .logo-placeholder {
         width: 52px;
         height: 52px;
-        border: 1.5px dashed var(--steel);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -505,13 +504,11 @@
         margin-bottom: 18px;
         overflow: hidden;
       }
-      .product-media img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        cursor: zoom-in;
-        transition: transform 0.3s ease;
-      }
+      .product-media img{
+    object-fit:contain;
+    padding:12px;
+    background:white;
+}
       .product-media img:hover {
         transform: scale(1.04);
       }
@@ -802,83 +799,218 @@
 
       @media (max-width: 720px) {
         .wrap {
-          padding: 0 20px;
+          padding: 0 18px;
         }
+
+        /* ---------- Header ---------- */
+
+        .header-inner {
+          height: 72px;
+        }
+
+        .logo-placeholder {
+          width: 42px;
+          height: 42px;
+        }
+
+        .logo-text {
+          font-size: 17px;
+        }
+
         nav {
-          position: absolute;
-          top: 84px;
+          top: 72px;
           left: 0;
           right: 0;
           background: var(--ink);
           border-bottom: 1px solid var(--line-dark);
           max-height: 0;
           overflow: hidden;
-          transition: max-height 0.25s ease;
+          transition: max-height 0.3s ease;
         }
+
         nav.open {
-          max-height: 400px;
+          max-height: 450px;
         }
+
         nav ul {
           flex-direction: column;
-          gap: 0;
-          padding: 8px 32px 24px;
+          padding: 12px 22px 22px;
         }
+
         nav ul li {
           border-bottom: 1px solid var(--line-dark);
         }
-        nav ul li a {
+
+        nav a {
           display: block;
-          padding: 16px 0;
+          padding: 18px 0;
+          font-size: 14px;
         }
+
         .nav-toggle {
           display: flex;
         }
+
+        /* ---------- Hero ---------- */
+
+        .hero-inner {
+          padding: 60px 0 40px;
+        }
+
+        .hero h1 {
+          font-size: 36px;
+          max-width: 100%;
+        }
+
+        .hero p.lead {
+          font-size: 16px;
+          margin-bottom: 30px;
+        }
+
+        .hero-ctas {
+          flex-direction: column;
+          gap: 14px;
+          margin-bottom: 40px;
+        }
+
+        .hero-ctas .btn {
+          width: 100%;
+          text-align: center;
+        }
+
+        .hero-specs {
+          grid-template-columns: 1fr;
+          gap: 18px;
+          padding-top: 28px;
+        }
+
+        .hero-specs div {
+          border: none;
+          border-top: 1px solid var(--line-dark);
+          padding: 18px 0 0;
+        }
+
+        .hero-specs div:first-child {
+          border-top: none;
+          padding-top: 0;
+        }
+
+        /* ---------- Sections ---------- */
+
+        section {
+          padding: 60px 0;
+        }
+
         .section-head {
           flex-direction: column;
           align-items: flex-start;
           gap: 14px;
+          margin-bottom: 36px;
         }
-        .section-head .section-note {
+
+        .section-head h2 {
+          font-size: 30px;
+        }
+
+        .section-note {
           text-align: left;
         }
-        .product-grid {
-          grid-template-columns: 1fr 1fr;
+
+        /* ---------- About ---------- */
+
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 36px;
         }
+
+        .about-copy p {
+          font-size: 15px;
+        }
+
+        /* ---------- Products ---------- */
+
+        .filter-tabs {
+          gap: 8px;
+          margin-bottom: 30px;
+        }
+
+        .product-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+          background: none;
+          border: none;
+        }
+
+        .product-card {
+          background: #fff;
+          border: 1px solid var(--line);
+          padding: 18px;
+        }
+
+        .product-media {
+          margin-bottom: 16px;
+        }
+
+        .product-media img {
+          object-fit: contain;
+          padding: 10px;
+          background: white;
+        }
+
+        /* ---------- Process ---------- */
+
         .process-steps {
           grid-template-columns: 1fr;
         }
+
+        /* ---------- Contact ---------- */
+
         .contact-channels {
           grid-template-columns: 1fr;
         }
+
         .channel {
-          border-left: none;
-          border-top: 1px solid var(--line-dark);
-          padding: 28px 24px;
+          border: none;
+          border-bottom: 1px solid var(--line-dark);
+          padding: 26px 20px;
         }
-        .channel:first-child {
-          border-top: none;
+
+        .channel:last-child {
+          border-bottom: none;
         }
-        section {
-          padding: 72px 0;
+
+        .channel .v {
+          font-size: 19px;
         }
-        .hero-inner {
-          padding: 84px 0 64px;
+
+        /* ---------- Map ---------- */
+
+        .map-slot {
+          aspect-ratio: 1/1;
         }
+
+        /* ---------- Footer ---------- */
+
+        .footer-inner {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .footer-links {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 18px;
+        }
+
         .lightbox {
-          padding: 16px;
+          padding: 12px;
         }
+
         .lightbox-close {
-          top: 16px;
-          right: 16px;
-          width: 38px;
-          height: 38px;
+          top: 12px;
+          right: 12px;
         }
       }
-      .channel .fa-instagram {
-    margin-right: 8px;
-    color: #E4405F;
-    font-size: 20px;
-}
       @media (max-width: 480px) {
         .product-grid {
           grid-template-columns: 1fr;
@@ -910,7 +1042,7 @@
       <div class="wrap header-inner">
         <div class="logo-slot">
           <!-- LOGO PLACEHOLDER: replace this div with <img src="images/logo.png" alt="Aush Bikes" style="height:44px;width:auto;"> -->
-          <div class="logo-placeholder">YOUR<br />LOGO</div>
+          <div class="logo-placeholder"><img src="Gemini_Generated_Image_hncthkhncthkhnct.png" alt=""></div>
           <span class="logo-text">AUSH <span>BIKES</span></span>
         </div>
         <button
