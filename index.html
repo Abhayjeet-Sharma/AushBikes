@@ -742,9 +742,9 @@
         gap: 12px;
       }
       .logo-placeholder-sm {
-        width: 30px;
-        height: 30px;
-        border: 1.5px dashed var(--steel);
+        width: 100px;
+        height: 50px;
+        
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1054,9 +1054,9 @@
         <div class="logo-slot">
           <!-- LOGO PLACEHOLDER: replace this div with <img src="images/logo.png" alt="Aush Bikes" style="height:44px;width:auto;"> -->
           <div class="logo-placeholder">
-            <img src="AushLogo.png" alt="" />
+            <img src="FinalLogo.png" alt="" />
           </div>
-          <span class="logo-text"><img src="AushBikesWritten.png" alt="aushBikes"></span>
+          <span class="logo-text"><img src="AushBlackBG.png" alt="aushBikes"></span>
         </div>
         <button
           class="nav-toggle"
@@ -1095,7 +1095,7 @@
         </div>
         <div class="hero-specs">
           <div>
-            <div class="num"><span>4</span>+</div>
+            <div class="num"><span>5</span>+</div>
             <div class="label">Years Manufacturing</div>
           </div>
           <div>
@@ -1105,10 +1105,6 @@
           <div>
             <div class="num"><span>40</span>+</div>
             <div class="label">Product Lines</div>
-          </div>
-          <div>
-            <div class="num"><span>ISO</span> 9001</div>
-            <div class="label">Certified Quality</div>
           </div>
         </div>
       </div>
@@ -1198,17 +1194,17 @@
 
         <div class="filter-tabs" id="filterTabs">
           <button class="filter-tab active" data-filter="all">All</button>
-          <button class="filter-tab" data-filter="chains">Frame</button>
-          <button class="filter-tab" data-filter="hubs">
+          <button class="filter-tab" data-filter="Frame">Frame</button>
+          <button class="filter-tab" data-filter="Fork">
             Rigid Fork
           </button>
-          <button class="filter-tab" data-filter="brakes">Carrier</button>
-          <button class="filter-tab" data-filter="cranks">Frame end Liner</button>
-          <button class="filter-tab" data-filter="other">Others</button>
+          <button class="filter-tab" data-filter="Carrier">Carrier</button>
+          <button class="filter-tab" data-filter="FrameEnd">Frame end Liner</button>
+          <button class="filter-tab" data-filter="Others">Others</button>
         </div>
 
         <div class="product-grid" id="productGrid">
-          <div class="product-card" data-category="chains">
+          <div class="product-card" data-category="Liner">
             <div class="product-media">
               <img src="Aush_page-0001.jpg" alt="Drive Chain" />
             </div>
@@ -1217,7 +1213,7 @@
             <div class="product-tag">Chains</div>
           </div>
 
-          <div class="product-card" data-category="hubs">
+          <div class="product-card" data-category="Liner">
             <div class="product-media">
               <img src="Aush_page-0002.jpg" alt="Front Hub" />
             </div>
@@ -1226,7 +1222,7 @@
             <div class="product-tag">Hubs &amp; Bearings</div>
           </div>
 
-          <div class="product-card" data-category="hubs">
+          <div class="product-card" data-category="Others">
             <div class="product-media">
               <img src="Aush_page-0003.jpg" alt="Rear Hub" />
             </div>
@@ -1235,7 +1231,7 @@
             <div class="product-tag">Hubs &amp; Bearings</div>
           </div>
 
-          <div class="product-card" data-category="brakes">
+          <div class="product-card" data-category="Others">
             <div class="product-media">
               <img src="Aush_page-0004.jpg" alt="Disc Brake Caliper" />
             </div>
@@ -1246,7 +1242,7 @@
 
           
 
-          <div class="product-card" data-category="cranks">
+          <div class="product-card" data-category="Others">
             <div class="product-media">
               <img src="Aush_page-0006.jpg" alt="Crankset" />
             </div>
@@ -1255,7 +1251,7 @@
             <div class="product-tag">Cranksets</div>
           </div>
 
-          <div class="product-card" data-category="pedals">
+          <div class="product-card" data-category="Others">
             <div class="product-media">
               <img src="Aush_page-0007.jpg" alt="Platform Pedals" />
             </div>
@@ -1268,7 +1264,7 @@
 
           <!-- TODO: rename these four — filenames didn't tell us what they are -->
           
-          <div class="product-card" data-category="other">
+          <div class="product-card" data-category="Carrier">
             <div class="product-media">
               <img src="Aush_page-0010.jpg" alt="Component 010" />
             </div>
@@ -1276,7 +1272,7 @@
             <div class="product-name">Carrier 20T</div>
             <div class="product-tag">Other</div>
           </div>
-          <div class="product-card" data-category="other">
+          <div class="product-card" data-category="Carrier">
             <div class="product-media">
               <img src="Aush_page-0011.jpg" alt="Component 011" />
             </div>
@@ -1284,7 +1280,7 @@
             <div class="product-name">Carrier 26T ELLY</div>
             <div class="product-tag">Other</div>
           </div>
-          <div class="product-card" data-category="other">
+          <div class="product-card" data-category="Carrier">
             <div class="product-media">
               <img src="Aush_page-0012.jpg" alt="Component 012" />
             </div>
@@ -1293,7 +1289,7 @@
             <div class="product-tag">Other</div>
           </div>
 
-          <div class="product-card" data-category="forks">
+          <div class="product-card" data-category="Fork">
             <div class="product-media">
               <img src="FORK_page-0001.jpg" alt="Fork 1" />
             </div>
@@ -1302,7 +1298,7 @@
             <div class="product-tag">Forks</div>
           </div>
           
-          <div class="product-card" data-category="forks">
+          <div class="product-card" data-category="Fork">
             <div class="product-media">
               <img src="FORK_page-0003.jpg" alt="Fork 3" />
             </div>
@@ -1310,15 +1306,15 @@
             <div class="product-name">Fork 16T BMX with Pivot</div>
             <div class="product-tag">Forks</div>
           </div>
-          <div class="product-card" data-category="forks">
+          <div class="product-card" data-category="Fork">
             <div class="product-media">
-              <img src="FORK_page-0004.jpg" alt="Fork 4" />
+              <img src="FORK_page-0004.jpg" alt="Fork" />
             </div>
             <div class="product-partno">P/N&nbsp;016</div>
             <div class="product-name">Fork 700C with Disc & Pivot</div>
             <div class="product-tag">Forks</div>
           </div>
-          <div class="product-card" data-category="forks">
+          <div class="product-card" data-category="Fork">
             <div class="product-media">
               <img src="FORK_page-0005.jpg" alt="Fork 5" />
             </div>
@@ -1326,7 +1322,7 @@
             <div class="product-name">Fork 24T MTB with Pivot</div>
             <div class="product-tag">Forks</div>
           </div>
-          <div class="product-card" data-category="forks">
+          <div class="product-card" data-category="Fork">
             <div class="product-media">
               <img src="FORK_page-0006.jpg" alt="Fork 6" />
             </div>
@@ -1334,7 +1330,7 @@
             <div class="product-name">Fork 27.5T MTB with Pivot</div>
             <div class="product-tag">Forks</div>
           </div>
-          <div class="product-card" data-category="forks">
+          <div class="product-card" data-category="Fork">
             <div class="product-media">
               <img src="FORK_page-0007.jpg" alt="Fork 7" />
             </div>
@@ -1481,7 +1477,7 @@
     <footer>
       <div class="wrap footer-inner">
         <div class="footer-left">
-          <div class="logo-placeholder-sm">LOGO</div>
+          <div class="logo-placeholder-sm"><img src="FinalLogo.png" alt=""></div>
           <span class="fine"
             >&copy; <span id="year"></span> AUSH BIKES. All rights
             reserved.</span
