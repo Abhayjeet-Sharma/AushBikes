@@ -163,8 +163,8 @@
         gap: 14px;
       }
       .logo-placeholder {
-        width: 52px;
-        height: 52px;
+        width: 80px;
+        height: 80px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -176,11 +176,17 @@
         flex-shrink: 0;
       }
       .logo-text {
-        font-family: var(--display);
-        font-size: 19px;
-        letter-spacing: 0.04em;
-        color: var(--paper);
-        text-transform: uppercase;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--mono);
+        font-size: 9px;
+        color: var(--steel);
+        text-align: center;
+        letter-spacing: 0.05em;
+        flex-shrink: 0;
       }
       .logo-text span {
         color: var(--accent);
@@ -232,6 +238,7 @@
         position: relative;
         overflow: hidden;
         border-bottom: 1px solid var(--line-dark);
+        padding:20px;
       }
       .hero-grid-bg {
         position: absolute;
@@ -1043,9 +1050,9 @@
         <div class="logo-slot">
           <!-- LOGO PLACEHOLDER: replace this div with <img src="images/logo.png" alt="Aush Bikes" style="height:44px;width:auto;"> -->
           <div class="logo-placeholder">
-            <img src="Gemini_Generated_Image_hncthkhncthkhnct.png" alt="" />
+            <img src="AushLogo.png" alt="" />
           </div>
-          <span class="logo-text">AUSH <span>BIKES</span></span>
+          <span class="logo-text"><img src="AushBikesWritten.png" alt="aushBikes"></span>
         </div>
         <button
           class="nav-toggle"
@@ -1153,23 +1160,20 @@
               <span>Rev. 01</span>
             </div>
             <div class="spec-row">
-              <span class="k">Founded</span><span class="v">2022</span>
+              <span class="k">Founded</span><span class="v">2021</span>
             </div>
             <div class="spec-row">
               <span class="k">Facility Size</span
-              ><span class="v">45,000<span>sq ft</span></span>
+              ><span class="v">21600<span>sq ft</span></span>
             </div>
+            
             <div class="spec-row">
-              <span class="k">Quality Standard</span
-              ><span class="v">ISO<span>9001:2015</span></span>
-            </div>
-            <div class="spec-row">
-              <span class="k">Annual Output</span
-              ><span class="v">50,000<span>units</span></span>
+              <span class="k">Monthly Output</span
+              ><span class="v">1,00,000<span>units</span></span>
             </div>
             <div class="spec-row">
               <span class="k">Markets Served</span
-              ><span class="v">12<span>countries</span></span>
+              ><span class="v">All<span>states</span></span>
             </div>
           </div>
         </div>
@@ -1190,15 +1194,13 @@
 
         <div class="filter-tabs" id="filterTabs">
           <button class="filter-tab active" data-filter="all">All</button>
-          <button class="filter-tab" data-filter="chains">Chains</button>
+          <button class="filter-tab" data-filter="chains">Frame</button>
           <button class="filter-tab" data-filter="hubs">
-            Hubs &amp; Bearings
+            Rigid Fork
           </button>
-          <button class="filter-tab" data-filter="brakes">Brake Systems</button>
-          <button class="filter-tab" data-filter="cranks">Cranksets</button>
-          <button class="filter-tab" data-filter="pedals">Pedals</button>
-          <button class="filter-tab" data-filter="forks">Forks</button>
-          <button class="filter-tab" data-filter="other">Other</button>
+          <button class="filter-tab" data-filter="brakes">Carrier</button>
+          <button class="filter-tab" data-filter="cranks">Frame end Liner</button>
+          <button class="filter-tab" data-filter="other">Others</button>
         </div>
 
         <div class="product-grid" id="productGrid">
@@ -1207,7 +1209,7 @@
               <img src="Aush_page-0001.jpg" alt="Drive Chain" />
             </div>
             <div class="product-partno">P/N&nbsp;001</div>
-            <div class="product-name">Drive Chain</div>
+            <div class="product-name">MTB Liner</div>
             <div class="product-tag">Chains</div>
           </div>
 
@@ -1216,7 +1218,7 @@
               <img src="Aush_page-0002.jpg" alt="Front Hub" />
             </div>
             <div class="product-partno">P/N&nbsp;002</div>
-            <div class="product-name">Front Hub</div>
+            <div class="product-name">BMX Liner</div>
             <div class="product-tag">Hubs &amp; Bearings</div>
           </div>
 
@@ -1225,7 +1227,7 @@
               <img src="Aush_page-0003.jpg" alt="Rear Hub" />
             </div>
             <div class="product-partno">P/N&nbsp;003</div>
-            <div class="product-name">Rear Hub</div>
+            <div class="product-name">Sheet Metal Pivot</div>
             <div class="product-tag">Hubs &amp; Bearings</div>
           </div>
 
@@ -1234,25 +1236,18 @@
               <img src="Aush_page-0004.jpg" alt="Disc Brake Caliper" />
             </div>
             <div class="product-partno">P/N&nbsp;004</div>
-            <div class="product-name">Disc Brake Caliper</div>
+            <div class="product-name">Volcano Pivot</div>
             <div class="product-tag">Brake Systems</div>
           </div>
 
-          <div class="product-card" data-category="brakes">
-            <div class="product-media">
-              <img src="Aush_page-0005.jpg" alt="Brake Lever Set" />
-            </div>
-            <div class="product-partno">P/N&nbsp;005</div>
-            <div class="product-name">Brake Lever Set</div>
-            <div class="product-tag">Brake Systems</div>
-          </div>
+          
 
           <div class="product-card" data-category="cranks">
             <div class="product-media">
               <img src="Aush_page-0006.jpg" alt="Crankset" />
             </div>
             <div class="product-partno">P/N&nbsp;006</div>
-            <div class="product-name">Crankset</div>
+            <div class="product-name">Seat Stay Bridge Moon Type</div>
             <div class="product-tag">Cranksets</div>
           </div>
 
@@ -1261,34 +1256,20 @@
               <img src="Aush_page-0007.jpg" alt="Platform Pedals" />
             </div>
             <div class="product-partno">P/N&nbsp;007</div>
-            <div class="product-name">Platform Pedals</div>
+            <div class="product-name">Side Stand Bracket</div>
             <div class="product-tag">Pedals</div>
           </div>
 
-          <div class="product-card" data-category="other">
-            <div class="product-media">
-              <img src="Aush_page-0008.jpg" alt="Seat Post" />
-            </div>
-            <div class="product-partno">P/N&nbsp;008</div>
-            <div class="product-name">Seat Post</div>
-            <div class="product-tag">Other</div>
-          </div>
+          
 
           <!-- TODO: rename these four — filenames didn't tell us what they are -->
-          <div class="product-card" data-category="other">
-            <div class="product-media">
-              <img src="Aush_page-0009.jpg" alt="Component 009" />
-            </div>
-            <div class="product-partno">P/N&nbsp;009</div>
-            <div class="product-name">Component 009</div>
-            <div class="product-tag">Other</div>
-          </div>
+          
           <div class="product-card" data-category="other">
             <div class="product-media">
               <img src="Aush_page-0010.jpg" alt="Component 010" />
             </div>
             <div class="product-partno">P/N&nbsp;010</div>
-            <div class="product-name">Component 010</div>
+            <div class="product-name">Carrier 20T</div>
             <div class="product-tag">Other</div>
           </div>
           <div class="product-card" data-category="other">
@@ -1296,7 +1277,7 @@
               <img src="Aush_page-0011.jpg" alt="Component 011" />
             </div>
             <div class="product-partno">P/N&nbsp;011</div>
-            <div class="product-name">Component 011</div>
+            <div class="product-name">Carrier 26T ELLY</div>
             <div class="product-tag">Other</div>
           </div>
           <div class="product-card" data-category="other">
@@ -1304,7 +1285,7 @@
               <img src="Aush_page-0012.jpg" alt="Component 012" />
             </div>
             <div class="product-partno">P/N&nbsp;012</div>
-            <div class="product-name">Component 012</div>
+            <div class="product-name">Carrier 26T</div>
             <div class="product-tag">Other</div>
           </div>
 
@@ -1313,23 +1294,16 @@
               <img src="FORK_page-0001.jpg" alt="Fork 1" />
             </div>
             <div class="product-partno">P/N&nbsp;013</div>
-            <div class="product-name">Fork</div>
+            <div class="product-name">Fork 26T MTB</div>
             <div class="product-tag">Forks</div>
           </div>
-          <div class="product-card" data-category="forks">
-            <div class="product-media">
-              <img src="FORK_page-0002.jpg" alt="Fork 2" />
-            </div>
-            <div class="product-partno">P/N&nbsp;014</div>
-            <div class="product-name">Fork</div>
-            <div class="product-tag">Forks</div>
-          </div>
+          
           <div class="product-card" data-category="forks">
             <div class="product-media">
               <img src="FORK_page-0003.jpg" alt="Fork 3" />
             </div>
             <div class="product-partno">P/N&nbsp;015</div>
-            <div class="product-name">Fork</div>
+            <div class="product-name">Fork 16T BMX with Pivot</div>
             <div class="product-tag">Forks</div>
           </div>
           <div class="product-card" data-category="forks">
@@ -1337,7 +1311,7 @@
               <img src="FORK_page-0004.jpg" alt="Fork 4" />
             </div>
             <div class="product-partno">P/N&nbsp;016</div>
-            <div class="product-name">Fork</div>
+            <div class="product-name">Fork 700C with Disc & Pivot</div>
             <div class="product-tag">Forks</div>
           </div>
           <div class="product-card" data-category="forks">
@@ -1345,7 +1319,7 @@
               <img src="FORK_page-0005.jpg" alt="Fork 5" />
             </div>
             <div class="product-partno">P/N&nbsp;017</div>
-            <div class="product-name">Fork</div>
+            <div class="product-name">Fork 24T MTB with Pivot</div>
             <div class="product-tag">Forks</div>
           </div>
           <div class="product-card" data-category="forks">
@@ -1353,7 +1327,7 @@
               <img src="FORK_page-0006.jpg" alt="Fork 6" />
             </div>
             <div class="product-partno">P/N&nbsp;018</div>
-            <div class="product-name">Fork</div>
+            <div class="product-name">Fork 27.5T MTB with Pivot</div>
             <div class="product-tag">Forks</div>
           </div>
           <div class="product-card" data-category="forks">
@@ -1361,7 +1335,7 @@
               <img src="FORK_page-0007.jpg" alt="Fork 7" />
             </div>
             <div class="product-partno">P/N&nbsp;019</div>
-            <div class="product-name">Fork</div>
+            <div class="product-name">Fork 26T round with Pivot</div>
             <div class="product-tag">Forks</div>
           </div>
 
@@ -1415,16 +1389,15 @@
             <div class="step-index">02 / Machining</div>
             <h3>Precision Machining</h3>
             <p>
-              CNC and forging processes shape each component to tolerance,
+              Bending and welding processes shape each component to tolerance,
               checked at every stage.
             </p>
           </div>
           <div class="process-step">
             <div class="step-index">03 / Finishing</div>
-            <h3>Surface Treatment</h3>
+            <h3>Skillful Team</h3>
             <p>
-              Plating, anodising or coating is applied for corrosion resistance
-              and finish quality.
+              Skilled craftsman, artisians and labour make the best out of the raw material and goods, ensuring the best product 
             </p>
           </div>
           <div class="process-step">
@@ -1469,16 +1442,10 @@
             </a>
             <div class="channel">
               <div class="k">Address</div>
-              <div class="v">Plot 000, Industrial Area</div>
-              <div class="v-sub">City, State — PIN CODE</div>
+              <div class="v">Kanganwal road , near police station Kanganwal</div>
+              <div class="v-sub">Ludhiana, Punjab — 141003</div>
             </div>
-            <div class="channel">
-              <div class="k">Enquiries</div>
-              <div class="v">Wholesale &amp; OEM</div>
-              <div class="v-sub">
-                Distribution and custom-spec orders welcome
-              </div>
-            </div>
+            
           </div>
 
           <a
