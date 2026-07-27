@@ -813,6 +813,7 @@
 
         .header-inner {
           height: 72px;
+          position: relative;
         }
 
         .logo-placeholder {
@@ -825,14 +826,17 @@
         }
 
         nav {
-          top: 72px;
+          position: absolute;
+          top: 100%;
           left: 0;
           right: 0;
+          width: 100%;
           background: var(--ink);
           border-bottom: 1px solid var(--line-dark);
           max-height: 0;
           overflow: hidden;
           transition: max-height 0.3s ease;
+          z-index: 200;
         }
 
         nav.open {
